@@ -1,4 +1,4 @@
-// 父类基础类
+// 父类基础类11
 'use strict';
 
 const Controller = require('egg').Controller;
