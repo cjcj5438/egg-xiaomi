@@ -8,5 +8,10 @@
 </head>
 <body>
     <h2>我是nj模引擎---{{username}}</h2>
+    <h2>{{username}}</h2>
+    <h2>{{password}}</h2>
+    <h2>{{username}}</h2>
+    <h2>{{verify}}</h2>
+    <h2>{{_csrf}}</h2>
 </body>
 </html>
