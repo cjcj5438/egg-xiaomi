@@ -6,13 +6,13 @@
 module.exports = app => {
   const {
     router,
-    controller
+    controller,
   } = app;
   router.get('/', controller.home.index);
 
-//验证码
-router.get('/admin/verify', controller.admin.base.verify);
-router.get('/admin/delete', controller.admin.base.delete);
+  // 验证码
+  router.get('/admin/verify', controller.admin.base.verify);
+  router.get('/admin/delete', controller.admin.base.delete);
 
   /* 这里不知道为什么 index  的路径会404 因为一定要使用模板引擎 */
   router.get('/admin/login', controller.admin.login.index);
