@@ -1,4 +1,5 @@
 'use strict';
+/* 用户管理表 */
 module.exports = app => {
   const mongoose = app.mongoose;
   const Schema = mongoose.Schema;

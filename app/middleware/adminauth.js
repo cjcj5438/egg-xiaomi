@@ -1,6 +1,6 @@
 'use strict';
 const url = require('url');
-module.exports = options => {
+module.exports = () => {
   return async function adminauth(ctx, next) {
     // console.log(options);
     /* 判断登录权限要做哪些事情
@@ -8,7 +8,7 @@ module.exports = options => {
       2.只有登录以后才可以访问后台管理系统
     */
     ctx.state.csrf = ctx.csrf; // 全局变量
-
+    ctx.state.prevPage = ctx.request.headers.referer; // 上一页的地址
     const pathname = url.parse(ctx.request.url).pathname;
 
     if (ctx.session.userinfo) {
