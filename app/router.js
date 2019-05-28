@@ -4,8 +4,16 @@
  * @param {Egg.Application} app - egg application
  */
 module.exports = app => {
-  const { router, controller } = app;
+  const {
+    router,
+    controller
+  } = app;
   router.get('/', controller.home.index);
+
+//验证码
+router.get('/admin/verify', controller.admin.base.verify);
+router.get('/admin/delete', controller.admin.base.delete);
+
   /* 这里不知道为什么 index  的路径会404 因为一定要使用模板引擎 */
   router.get('/admin/login', controller.admin.login.index);
   router.post('/admin/doLogin', controller.admin.login.doLogin);
@@ -25,7 +33,9 @@ module.exports = app => {
 
   router.get('/admin/access', controller.admin.access.index);
   router.get('/admin/access/add', controller.admin.access.add);
+  router.post('/admin/access/doAdd', controller.admin.access.doAdd);
   router.get('/admin/access/edit', controller.admin.access.edit);
+  router.post('/admin/access/doEdit', controller.admin.access.doEdit);
 
 
 };
